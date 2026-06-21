@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صدقة جارية</title>
+<meta name="description" content="صدقة جارية — سبّح وادعُ واقرأ الفاتحة عن روح أحبابك">
+<meta property="og:title" content="صدقة جارية">
+<meta property="og:description" content="سبّح وادعُ واقرأ الفاتحة عن روح أحبابك — أجر لا ينقطع">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#c9a84c;--gold-light:#e8d5a0;--gold-dark:#8a6d2b;--bg:#0a1628;--card:#0f1f3a;--text:#e8e0d0;--text2:#9aabbf;--green:#1a6b4a;--green2:#2a9d6a;--border:rgba(201,168,76,0.15);--glow:0 0 30px rgba(201,168,76,0.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,rgba(201,168,76,0.03) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(26,107,74,0.04) 0%,transparent 50%);pointer-events:none;z-index:0}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;width:2px;height:2px;background:var(--gold-light);border-radius:50%;animation:twinkle var(--dur) ease-in-out infinite;opacity:0}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:var(--op)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.header{text-align:center;padding:50px 20px 20px;position:relative;z-index:1}
+.bismillah{font-family:'Scheherazade New',serif;font-size:2.2rem;color:var(--gold);margin-bottom:8px;opacity:0;animation:fadeUp 1s ease forwards .3s}
+.main-title{font-family:'Amiri',serif;font-size:3.2rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;opacity:0;animation:fadeUp 1s ease forwards .5s}
+.orn{width:200px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:15px auto;opacity:0;animation:fadeUp 1s ease forwards .7s}
+.hadith{max-width:620px;margin:10px auto 0;padding:15px 25px;border:1px solid var(--border);border-radius:12px;background:rgba(201,168,76,0.03);opacity:0;animation:fadeUp 1s ease forwards .9s}
+.hadith-t{font-family:'Amiri',serif;font-size:1.05rem;color:var(--gold-light);line-height:2}
+.hadith-s{font-size:.8rem;color:var(--text2);margin-top:5px}
+.ctn{max-width:900px;margin:0 auto;padding:25px 20px 40px;position:relative;z-index:1}
+#landing{animation:fadeIn .5s ease}
+.land-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:40px 30px;text-align:center;max-width:550px;margin:0 auto;box-shadow:var(--glow)}
+.land-card h2{font-family:'Amiri',serif;font-size:1.6rem;color:var(--gold);margin-bottom:8px}
+.land-card p{font-size:.95rem;color:var(--text2);margin-bottom:25px;line-height:1.8}
+.land-input{width:100%;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:14px;color:var(--text);font-family:'Tajawal',sans-serif;font-size:1.1rem;direction:rtl;text-align:center;margin-bottom:15px}
+.land-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.1)}
+.land-input::placeholder{color:rgba(154,171,191,0.4)}
+.photo-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:22px}
+.photo-c{width:70px;height:70px;border-radius:50%;border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;transition:all .3s;background:rgba(255,255,255,0.02)}
+.photo-c:hover{border-color:var(--gold)}.photo-c img{width:100%;height:100%;object-fit:cover}
+.photo-c .ph{font-size:1.5rem;opacity:.4}
+.photo-lbl{font-size:.8rem;color:var(--text2)}
+.opt-tag{display:inline-block;font-size:.65rem;padding:2px 8px;background:rgba(201,168,76,0.1);color:var(--gold);border-radius:10px}
+.btn-go{width:100%;padding:16px;background:linear-gradient(135deg,var(--green),var(--green2));border:none;border-radius:14px;color:white;font-family:'Tajawal',sans-serif;font-size:1.1rem;font-weight:500;cursor:pointer;transition:all .3s}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(26,107,74,0.3)}
+.btn-go:disabled{opacity:.5;cursor:not-allowed;transform:none}
+#memorial{display:none;animation:fadeIn .5s ease}
+.back-link{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:1px solid var(--border);border-radius:12px;background:0;color:var(--text2);font-family:'Tajawal',sans-serif;font-size:.85rem;cursor:pointer;transition:all .3s;margin-bottom:20px;text-decoration:none}
+.back-link:hover{border-color:var(--gold);color:var(--gold)}
+.p-head{text-align:center;margin-bottom:28px;padding:25px;background:var(--card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--glow)}
+.p-av{width:100px;height:100px;border-radius:50%;margin:0 auto 12px;border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;overflow:hidden;background:rgba(201,168,76,0.05);box-shadow:0 0 25px rgba(201,168,76,0.12)}
+.p-av img{width:100%;height:100%;object-fit:cover}
+.p-name{font-family:'Amiri',serif;font-size:2rem;color:var(--gold-light);margin-bottom:4px}
+.p-dua{font-family:'Scheherazade New',serif;font-size:1.1rem;color:var(--text2)}
+.p-stats{display:flex;justify-content:center;gap:25px;margin-top:15px}
+.ps{text-align:center}.ps .n{font-size:1.4rem;font-weight:700;color:var(--gold)}.ps .l{font-size:.7rem;color:var(--text2)}
+.share-row{display:flex;justify-content:center;gap:10px;margin-top:15px;flex-wrap:wrap}
+.share-btn{padding:9px 20px;border:1px solid var(--border);border-radius:20px;background:0;color:var(--text2);font-family:'Tajawal',sans-serif;font-size:.82rem;cursor:pointer;transition:all .3s;display:inline-flex;align-items:center;gap:6px}
+.share-btn:hover{border-color:var(--gold);color:var(--gold)}
+.share-btn.green{border-color:var(--green2);color:var(--green2)}.share-btn.green:hover{background:rgba(42,157,106,0.1)}
+.share-btn.wa{border-color:#25d366;color:#25d366}.share-btn.wa:hover{background:rgba(37,211,102,0.1)}
+.sec{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;margin-bottom:22px;box-shadow:var(--glow)}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.si{font-size:1.7rem}.st{font-family:'Amiri',serif;font-size:1.35rem;color:var(--gold)}.ss{font-size:.78rem;color:var(--text2)}
+.az{display:flex;align-items:center;gap:14px;padding:13px 15px;border:1px solid var(--border);border-radius:14px;margin-bottom:9px;transition:all .3s;background:rgba(201,168,76,0.015)}
+.az:hover{border-color:rgba(201,168,76,0.25)}.az.done{border-color:var(--green2);background:rgba(42,157,106,0.04)}
+.az-b{flex:1;min-width:0}.az-t{font-family:'Scheherazade New',serif;font-size:1.2rem;color:var(--text);line-height:2}
+.az-p{display:flex;align-items:center;gap:8px;margin-top:5px}
+.az-bar{flex:1;height:3px;background:rgba(201,168,76,0.1);border-radius:2px;overflow:hidden}
+.az-fill{height:100%;background:var(--gold);border-radius:2px;transition:width .3s}
+.az-l{font-size:.7rem;color:var(--text2);white-space:nowrap}
+.az-c{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.az-n{min-width:40px;text-align:center;font-size:1.2rem;font-weight:700;color:var(--gold)}
+.az-plus{width:48px;height:48px;border-radius:50%;border:2px solid var(--gold);background:rgba(201,168,76,0.04);color:var(--gold);font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;user-select:none}
+.az-plus:active{transform:scale(.9);background:rgba(201,168,76,0.15)}
+.du{padding:15px;border:1px solid var(--border);border-radius:14px;margin-bottom:9px;text-align:center;cursor:pointer;transition:all .3s;background:rgba(201,168,76,0.015)}
+.du:hover{border-color:rgba(201,168,76,0.25)}.du.read{border-color:var(--green2);background:rgba(42,157,106,0.04)}
+.du-t{font-family:'Scheherazade New',serif;font-size:1.15rem;color:var(--text);line-height:2.2}
+.du-chk{display:inline-block;width:22px;height:22px;border-radius:50%;border:2px solid var(--border);margin-top:6px;transition:all .3s;line-height:18px;text-align:center;font-size:.7rem}
+.du.read .du-chk{background:var(--green2);border-color:var(--green2);color:white}
+.qbox{padding:25px;background:rgba(201,168,76,0.02);border:1px solid var(--border);border-radius:16px;text-align:center}
+.qayah{font-family:'Scheherazade New',serif;font-size:1.5rem;line-height:2.8;color:var(--text)}
+.q-done{margin-top:18px;padding:12px 28px;border:1px solid var(--green2);border-radius:12px;background:rgba(42,157,106,0.1);color:var(--green2);font-family:'Tajawal',sans-serif;font-size:1rem;cursor:pointer;transition:all .3s}
+.q-done:hover{background:rgba(42,157,106,0.2)}
+.q-count{margin-top:10px;font-size:.9rem;color:var(--text2)}.q-count span{color:var(--gold);font-weight:700}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);padding:14px 28px;background:var(--green);border:1px solid var(--green2);border-radius:14px;color:white;font-family:'Tajawal',sans-serif;z-index:200;transition:transform .4s;white-space:nowrap;max-width:90%}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.footer{text-align:center;padding:30px 20px;position:relative;z-index:1}
+.footer-t{font-size:.85rem;color:var(--text2);opacity:.6}
+.footer-d{font-family:'Scheherazade New',serif;font-size:1.1rem;color:var(--gold);opacity:.5;margin-top:8px}
+@media(max-width:600px){.main-title{font-size:2.2rem}.bismillah{font-size:1.6rem}.az{flex-direction:column;text-align:center}.az-c{justify-content:center}.p-stats{gap:15px}.p-name{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<header class="header">
+  <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <h1 class="main-title">صدقة جارية</h1>
+  <div class="orn"></div>
+  <div class="hadith">
+    <p class="hadith-t">«إِذَا مَاتَ ابْنُ آدَمَ انْقَطَعَ عَمَلُهُ إِلَّا مِنْ ثَلَاثٍ: صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ»</p>
+    <p class="hadith-s">رواه مسلم</p>
+  </div>
+</header>
+<div class="ctn">
+  <div id="landing">
+    <div class="land-card">
+      <h2>أنشئ صفحة صدقة جارية</h2>
+      <p>أدخل اسم المتوفى أو الشهيد<br>وابدأ بالتسبيح والدعاء وقراءة الفاتحة عن روحه<br>ثم شارك الصفحة ليدعو له الآخرون</p>
+      <input type="text" class="land-input" id="inpName" placeholder="اسم المتوفى أو الشهيد">
+      <div class="photo-row">
+        <div class="photo-c" id="photoC" onclick="document.getElementById('photoF').click()"><span class="ph">📷</span></div>
+        <div><div class="photo-lbl">إضافة صورة <span class="opt-tag">اختياري</span></div></div>
+        <input type="file" id="photoF" accept="image/*" style="display:none" onchange="prevPhoto(this)">
+      </div>
+      <button class="btn-go" id="btnCreate" onclick="createMemorial()">ابدأ الصدقة الجارية ←</button>
+    </div>
+  </div>
+  <div id="memorial">
+    <a class="back-link" href="#" onclick="goHome(event)">→ إنشاء صفحة جديدة</a>
+    <div class="p-head">
+      <div class="p-av" id="mAv"><span style="font-size:2.5rem;color:var(--gold);opacity:.5">🕊️</span></div>
+      <div class="p-name" id="mName"></div>
+      <div class="p-dua">اللهم ارحمه واغفر له وأسكنه فسيح جناتك</div>
+      <div class="p-stats">
+        <div class="ps"><div class="n" id="sAz">0</div><div class="l">إجمالي الأذكار</div></div>
+        <div class="ps"><div class="n" id="sDua">0</div><div class="l">إجمالي الأدعية</div></div>
+        <div class="ps"><div class="n" id="sQ">0</div><div class="l">إجمالي القراءات</div></div>
+      </div>
+      <div class="share-row">
+        <button class="share-btn wa" onclick="shareWhatsApp()">واتساب</button>
+        <button class="share-btn" onclick="shareNative()">📤 مشاركة</button>
+        <button class="share-btn green" onclick="copyURL()">📋 نسخ الرابط</button>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sh"><span class="si">📿</span><div><div class="st">عداد الأذكار</div><div class="ss">سبّح واستغفر وأهدِ الأجر — عدادك الخاص</div></div></div>
+      <div id="azList"></div>
+    </div>
+    <div class="sec">
+      <div class="sh"><span class="si">🤲</span><div><div class="st">أدعية للمتوفى</div><div class="ss">ادعُ بأدعية مأثورة وأهدِ الأجر</div></div></div>
+      <div id="duaList"></div>
+    </div>
+    <div class="sec">
+      <div class="sh"><span class="si">📖</span><div><div class="st">قراءة سورة الفاتحة</div><div class="ss">اقرأها وأهدِ الأجر لروحه</div></div></div>
+      <div class="qbox"><div class="qayah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾</div></div>
+      <div style="text-align:center"><button class="q-done" onclick="readQuran()">✓ أتممت القراءة — أهدي الأجر</button><div class="q-count" id="qCount"></div></div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <p class="footer-t">صدقة جارية — نسأل الله أن يتقبلها</p>
+  <p class="footer-d">اللهم اغفر لأمواتنا وأموات المسلمين</p>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="./firebase-config.js"></script>
+<script>
+if(!window.firebaseConfig||!window.firebaseConfig.apiKey){
+  throw new Error('Missing Firebase config. Create firebase-config.js from firebase-config.example.js.');
+}
+firebase.initializeApp(window.firebaseConfig);
+const db=firebase.firestore();
+
+const AZKAR=[{text:'سُبْحَانَ اللَّهِ',target:33},{text:'الْحَمْدُ لِلَّهِ',target:33},{text:'اللَّهُ أَكْبَرُ',target:33},{text:'لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',target:10},{text:'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',target:100},{text:'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',target:33},{text:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',target:100},{text:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ سُبْحَانَ اللَّهِ الْعَظِيمِ',target:33},{text:'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ',target:50},{text:'لَا إِلَهَ إِلَّا اللَّهُ',target:100},{text:'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ',target:10},{text:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',target:33},{text:'أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ',target:33},{text:'سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ',target:33}];
+const DUAS=['اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ','اللَّهُمَّ أَكْرِمْ نُزُلَهُ وَوَسِّعْ مُدْخَلَهُ وَاغْسِلْهُ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ','اللَّهُمَّ نَقِّهِ مِنَ الْخَطَايَا كَمَا يُنَقَّى الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ','اللَّهُمَّ أَبْدِلْهُ دَارًا خَيْرًا مِنْ دَارِهِ وَأَهْلًا خَيْرًا مِنْ أَهْلِهِ','اللَّهُمَّ أَدْخِلْهُ الْجَنَّةَ وَأَعِذْهُ مِنْ عَذَابِ الْقَبْرِ وَعَذَابِ النَّارِ','اللَّهُمَّ اجْعَلْ قَبْرَهُ رَوْضَةً مِنْ رِيَاضِ الْجَنَّةِ','اللَّهُمَّ ارْفَعْ دَرَجَتَهُ فِي الْمَهْدِيِّينَ وَاخْلُفْهُ فِي عَقِبِهِ فِي الْغَابِرِينَ','اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهُ وَلَا تَفْتِنَّا بَعْدَهُ وَاغْفِرْ لَنَا وَلَهُ','اللَّهُمَّ اغْفِرْ لِحَيِّنَا وَمَيِّتِنَا وَشَاهِدِنَا وَغَائِبِنَا وَصَغِيرِنَا وَكَبِيرِنَا وَذَكَرِنَا وَأُنْثَانَا','اللَّهُمَّ مَنْ أَحْيَيْتَهُ مِنَّا فَأَحْيِهِ عَلَى الْإِسْلَامِ وَمَنْ تَوَفَّيْتَهُ مِنَّا فَتَوَفَّهُ عَلَى الْإِيمَانِ','اللَّهُمَّ ثَبِّتْهُ عِنْدَ السُّؤَالِ','اللَّهُمَّ نَوِّرْ لَهُ قَبْرَهُ وَوَسِّعْ لَهُ فِيهِ','اللَّهُمَّ آنِسْ وَحْشَتَهُ وَارْحَمْ غُرْبَتَهُ','اللَّهُمَّ اجْعَلْهُ فِي الْفِرْدَوْسِ الْأَعْلَى مِنَ الْجَنَّةِ','اللَّهُمَّ ارْحَمْهُ فَإِنَّهُ كَانَ مُسْلِمًا وَاغْفِرْ لَهُ فَإِنَّهُ كَانَ مُؤْمِنًا','اللَّهُمَّ أَدْخِلْهُ الْجَنَّةَ مِنْ غَيْرِ حِسَابٍ وَلَا سَابِقِ عَذَابٍ','اللَّهُمَّ اجْمَعْنَا بِهِ فِي جَنَّاتِ النَّعِيمِ','رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ وَلَا تَجْعَلْ فِي قُلُوبِنَا غِلًّا لِلَّذِينَ آمَنُوا رَبَّنَا إِنَّكَ رَءُوفٌ رَحِيمٌ'];
+
+let pKey='',pName='',pPhoto='';
+let G={totalAzkar:0,totalDua:0,quranRead:0};
+let L={azkar:{},duas:[],quranRead:0};
+let saving=false;
+
+function shortId(){const c='abcdefghijklmnpqrstuvwxyz23456789';let r='';for(let i=0;i<6;i++)r+=c[Math.floor(Math.random()*c.length)];return r}
+
+function loadLocal(){try{const d=JSON.parse(localStorage.getItem('sj_'+pKey));if(d){L=d;L.azkar=L.azkar||{};L.duas=L.duas||[];L.quranRead=L.quranRead||0}else L={azkar:{},duas:[],quranRead:0}}catch(e){L={azkar:{},duas:[],quranRead:0}}}
+function saveLocal(){try{localStorage.setItem('sj_'+pKey,JSON.stringify(L))}catch(e){}}
+
+async function loadGlobal(){if(!pKey)return;try{const doc=await db.collection('sadaqa').doc(pKey).get();if(doc.exists){const d=doc.data();pName=d.name||pName;pPhoto=d.photo||'';G.totalAzkar=d.totalAzkar||0;G.totalDua=d.totalDua||0;G.quranRead=d.quranRead||0}}catch(e){console.error(e)}}
+
+function listenGlobal(){if(!pKey)return;db.collection('sadaqa').doc(pKey).onSnapshot(doc=>{if(doc.exists&&!saving){const d=doc.data();G.totalAzkar=d.totalAzkar||0;G.totalDua=d.totalDua||0;G.quranRead=d.quranRead||0;renderStats()}})}
+
+async function incGlobal(field,n){if(!pKey||saving)return;saving=true;try{await db.collection('sadaqa').doc(pKey).update({[field]:firebase.firestore.FieldValue.increment(n),updatedAt:firebase.firestore.FieldValue.serverTimestamp()})}catch(e){console.error(e)}saving=false}
+
+function init(){const c=document.getElementById('stars');for(let i=0;i<60;i++){const s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.setProperty('--dur',(3+Math.random()*4)+'s');s.style.setProperty('--op',(0.2+Math.random()*0.5));s.style.animationDelay=Math.random()*5+'s';c.appendChild(s)}parseHash()}
+
+function parseHash(){const h=location.hash.slice(1);if(!h){showLanding();return}pKey=h.trim();if(!pKey||pKey.length<4){showLanding();return}showMemorial()}
+
+function showLanding(){document.getElementById('landing').style.display='block';document.getElementById('memorial').style.display='none'}
+
+async function showMemorial(){document.getElementById('landing').style.display='none';document.getElementById('memorial').style.display='block';await loadGlobal();loadLocal();document.getElementById('mName').textContent=pName;document.title='صدقة جارية — '+pName;if(pPhoto)document.getElementById('mAv').innerHTML='<img src="'+pPhoto+'">';else document.getElementById('mAv').innerHTML='<span style="font-size:2.5rem;color:var(--gold);opacity:.5">🕊️</span>';renderAll();listenGlobal()}
+
+function goHome(e){e&&e.preventDefault();location.hash='';pKey='';pName='';pPhoto='';G={totalAzkar:0,totalDua:0,quranRead:0};L={azkar:{},duas:[],quranRead:0};document.title='صدقة جارية';showLanding()}
+
+let photoData='';
+function prevPhoto(inp){if(inp.files&&inp.files[0]){const r=new FileReader();r.onload=e=>{const img=new Image();img.onload=()=>{const cv=document.createElement('canvas');const M=120;let w=img.width,h=img.height;if(w>h){h=h*M/w;w=M}else{w=w*M/h;h=M}cv.width=w;cv.height=h;cv.getContext('2d').drawImage(img,0,0,w,h);photoData=cv.toDataURL('image/jpeg',0.4);document.getElementById('photoC').innerHTML='<img src="'+photoData+'">'};img.src=e.target.result};r.readAsDataURL(inp.files[0])}}
+
+async function createMemorial(){const name=document.getElementById('inpName').value.trim();if(!name){toast('⚠️ أدخل اسم المتوفى');return}const btn=document.getElementById('btnCreate');btn.disabled=true;btn.textContent='جارٍ الإنشاء...';const key=shortId();try{const d={name:name,totalAzkar:0,totalDua:0,quranRead:0,createdAt:firebase.firestore.FieldValue.serverTimestamp()};if(photoData)d.photo=photoData;await db.collection('sadaqa').doc(key).set(d)}catch(e){console.error(e)}btn.disabled=false;btn.textContent='ابدأ الصدقة الجارية ←';location.hash=key}
+
+function getShareURL(){return location.origin+location.pathname+'#'+pKey}
+function shareWhatsApp(){const url=getShareURL();const text='صدقة جارية عن روح *'+pName+'*\nادخل سبّح وادعِ له واقرأ الفاتحة عن روحه 🕊️\n'+url;window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank')}
+function shareNative(){const url=getShareURL();const text='صدقة جارية عن روح '+pName+' — ادخل سبّح وادعِ له واقرأ الفاتحة عن روحه 🕊️';if(navigator.share){navigator.share({title:'صدقة جارية — '+pName,text,url})}else copyURL()}
+function copyURL(){const url=getShareURL();navigator.clipboard.writeText(url).then(()=>toast('📋 تم نسخ الرابط')).catch(()=>{const t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);toast('📋 تم نسخ الرابط')})}
+
+function renderAll(){renderStats();renderAz();renderDua();renderQ()}
+function renderStats(){document.getElementById('sAz').textContent=(G.totalAzkar||0).toLocaleString('ar-EG');document.getElementById('sDua').textContent=(G.totalDua||0).toLocaleString('ar-EG');document.getElementById('sQ').textContent=(G.quranRead||0).toLocaleString('ar-EG')}
+
+function renderAz(){document.getElementById('azList').innerHTML=AZKAR.map((a,i)=>{const c=L.azkar[i]||0;const pct=Math.min(c/a.target*100,100);return'<div class="az '+(c>=a.target?'done':'')+'"><div class="az-b"><div class="az-t">'+a.text+'</div><div class="az-p"><div class="az-bar"><div class="az-fill" style="width:'+pct+'%"></div></div><span class="az-l">'+c+' / '+a.target+'</span></div></div><div class="az-c"><div class="az-n">'+c+'</div><button class="az-plus" onclick="incAz('+i+')">+</button></div></div>'}).join('')}
+
+async function incAz(i){L.azkar[i]=(L.azkar[i]||0)+1;saveLocal();renderAz();await incGlobal('totalAzkar',1);if(L.azkar[i]===AZKAR[i].target)toast('ما شاء الله! أتممت العدد')}
+
+function renderDua(){document.getElementById('duaList').innerHTML=DUAS.map((d,i)=>'<div class="du '+(L.duas.includes(i)?'read':'')+'" onclick="togDua('+i+')"><div class="du-t">'+d+'</div><div><span class="du-chk">'+(L.duas.includes(i)?'✓':'')+'</span></div></div>').join('')}
+
+async function togDua(i){if(L.duas.includes(i)){L.duas=L.duas.filter(x=>x!==i);saveLocal();renderDua();await incGlobal('totalDua',-1)}else{L.duas.push(i);saveLocal();renderDua();await incGlobal('totalDua',1);toast('آمين — تقبل الله')}}
+
+function renderQ(){document.getElementById('qCount').innerHTML=G.quranRead>0?'إجمالي القراءات: <span>'+G.quranRead+'</span>':''}
+
+async function readQuran(){L.quranRead=(L.quranRead||0)+1;saveLocal();await incGlobal('quranRead',1);toast('تقبل الله قراءتك — أُهدي الأجر لروح '+pName)}
+
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+
+window.addEventListener('hashchange',parseHash);
+init();
+</script>
+</body>
+</html>

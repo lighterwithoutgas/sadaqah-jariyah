@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+
+.firebase/
+.firebaserc
+firebase-config.js
+public/firebase-config.js
+
+node_modules/
+*.log
+dist/
+build/
